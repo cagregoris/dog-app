@@ -84,7 +84,7 @@ const IntroForm = ({checkedSize, setCheckedSize, checkedAge, setCheckedAge}) => 
           />
           <label htmlFor='checkbox--2'>Senior (over 8 yrs)</label>
         </div>
-        <button type="submit">submit</button>
+        <button>submit</button>
       </form>
     </div>
   )

@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
+// IMAGES
+import lab from '../images/lab.jpg';
+import aussie from '../images/Aussie.jpg';
+import poodle from '../images/poodle.jpg';
+import defaultPic from '../images/default.jpg'
+
 const ListDogs = ({checkedSize, checkedAge}) => {
   const [dogs, setDogs] = useState([]);
 
@@ -61,12 +67,35 @@ const ListDogs = ({checkedSize, checkedAge}) => {
     })
 
 
-    console.log(finalArray)
+    
+    const picture = function(dog) {
+         switch(dog.breed) {
+           case 'Lab':
+            return <img style={{width: "400px"}} src={lab}></img>; 
+           case 'Australian Shepherd':
+            return <img style={{width: "400px"}} src={aussie}></img>;
+           case 'Miniature Poodle':
+            return <img style={{width: "400px"}} src={poodle}></img>;
+           default:
+            return <img style={{width: "400px"}} src={defaultPic}></img>;
+         } 
+    } 
+  
+
   
   return (
     <div>
       {finalArray.map(dog => (
-        <div>{dog.dog_name}</div>
+        <div>
+          {picture(dog)}
+          <h2>{dog.dog_name}</h2>
+          <h3>{dog.breed}</h3>
+          <span><b>Shelter:</b> {dog.shelter}</span>
+          <br></br>
+          <span><b>About me:</b> {dog.bio}</span>
+          <h4>{dog.fact_title}</h4>
+          <span>{dog.fact_desc}</span>
+        </div>
       ))}
       
     </div>
