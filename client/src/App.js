@@ -6,6 +6,10 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import IntroForm from "./Components/IntroForm";
 import ListDogs from "./Components/ListDogs";
 
+//Styles
+import './Styles/introForm.css';
+import './Styles/dogsList.css';
+
 function App() {
   const [checkedSize, setCheckedSize] = useState(
     new Array(3).fill(false)
