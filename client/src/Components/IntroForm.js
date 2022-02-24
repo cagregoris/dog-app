@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom';
 
 const IntroForm = ({checkedSize, setCheckedSize, checkedAge, setCheckedAge}) => {
 
@@ -16,9 +17,6 @@ const IntroForm = ({checkedSize, setCheckedSize, checkedAge, setCheckedAge}) => 
       )
       setCheckedAge(updatedCheckedAge);
     };
-
-    // console.log("checked age in introform component", checkedAge);
-
 
   return (
     <div>
@@ -84,7 +82,7 @@ const IntroForm = ({checkedSize, setCheckedSize, checkedAge, setCheckedAge}) => 
           />
           <label htmlFor='checkbox--2'>Senior (over 8 yrs)</label>
         </div>
-        <button>submit</button>
+        <Link to="/dogs" ><button>submit</button> </Link>
       </form>
     </div>
   )

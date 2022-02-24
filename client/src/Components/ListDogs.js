@@ -4,7 +4,17 @@ import React, { useEffect, useState } from 'react'
 import lab from '../images/lab.jpg';
 import aussie from '../images/Aussie.jpg';
 import poodle from '../images/poodle.jpg';
-import defaultPic from '../images/default.jpg'
+import defaultPic from '../images/default.jpg';
+import pug from '../images/pug.jpg';
+import rottweiler from '../images/rottie.jpg';
+import basset from '../images/basset.jpg';
+import bernese from '../images/bernese.jpg';
+import yorkie from '../images/yorkie.jpg';
+import dobermann from '../images/dobermann.jpg';
+import vizsla from '../images/vizsla.jpg';
+import dashchund from '../images/dachshund.jpg';
+
+import { Link } from 'react-router-dom';
 
 const ListDogs = ({checkedSize, checkedAge}) => {
   const [dogs, setDogs] = useState([]);
@@ -52,11 +62,6 @@ const ListDogs = ({checkedSize, checkedAge}) => {
     newAgeArray.push("puppy", "adult", "senior");
   }
 
-  // console.log("age array", newAgeArray)
-  // console.log("size array", newArray)
-
-  // dog.age === newAgeArray[0] || dog.age === newAgeArray[1] || dog.age === newAgeArray[2]
-
     let arr = [];
     let finalArray = [];
     dogs.filter((dog) => dog.size === newArray[0] || dog.size === newArray[1] || dog.size === newArray[2]).map(filteredDog => (
@@ -76,6 +81,22 @@ const ListDogs = ({checkedSize, checkedAge}) => {
             return <img style={{width: "400px"}} src={aussie}></img>;
            case 'Miniature Poodle':
             return <img style={{width: "400px"}} src={poodle}></img>;
+           case 'Pug':
+            return <img style={{width: "400px"}} src={pug}></img>;
+           case 'Rottweiler':
+            return <img style={{width: "400px"}} src={rottweiler}></img>;
+           case 'Basset Hound':
+            return <img style={{width: "400px"}} src={basset}></img>;
+           case 'Bernese Mountain Dog':
+            return <img style={{width: "400px"}} src={bernese}></img>;
+           case 'Yorkie':
+            return <img style={{width: "400px"}} src={yorkie}></img>;
+           case 'Dachshund':
+            return <img style={{width: "400px"}} src={dashchund}></img>;
+           case 'Dobermann':
+            return <img style={{width: "400px"}} src={dobermann}></img>;
+           case 'Vizsla':
+            return <img style={{width: "400px"}} src={vizsla}></img>;
            default:
             return <img style={{width: "400px"}} src={defaultPic}></img>;
          } 
@@ -85,6 +106,9 @@ const ListDogs = ({checkedSize, checkedAge}) => {
   
   return (
     <div>
+      <div>
+        <Link to="/"> <button>Go Back</button> </Link>
+      </div>
       {finalArray.map(dog => (
         <div>
           {picture(dog)}

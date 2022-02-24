@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+
 // COMPONENTS
 import IntroForm from "./Components/IntroForm";
 import ListDogs from "./Components/ListDogs";
@@ -14,8 +16,13 @@ function App() {
 
   return (
     <div className="App">
-      <IntroForm checkedSize={checkedSize} setCheckedSize={setCheckedSize} checkedAge={checkedAge} setCheckedAge={setCheckedAge}/>
-      <ListDogs checkedSize={checkedSize} checkedAge={checkedAge} />
+    <Router >
+      <Routes>
+          <Route path='/' exact element={<IntroForm checkedSize={checkedSize} setCheckedSize={setCheckedSize} checkedAge={checkedAge} setCheckedAge={setCheckedAge} />} />
+          <Route path='/dogs' exact element={<ListDogs checkedSize={checkedSize} checkedAge={checkedAge} />} />
+          
+      </Routes>
+    </Router>
     </div>
   );
 }
